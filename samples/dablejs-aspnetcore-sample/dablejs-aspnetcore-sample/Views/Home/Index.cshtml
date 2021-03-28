@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<link rel="stylesheet" href="~/lib/dable-js/dable.css" />
+<div id="root"></div>
+
+<script type="text/javascript" src='~/lib/dable-js/dable.js'></script>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        var dableColumns = [
+            { type: "data", title: "Customer Name", property: "firstName" },
+            { type: "data", title: "Customer Surname", property: "familyName" },
+            { type: "data", title: "Phone", property: "phoneNumber" },
+            { type: "action", title: "E Mail", content: "<a href='mailto:${this.emailAddress}'>${this.emailAddress}</a>" },
+            { type: "data", title: "Postal Address", property: "address" },
+            { type: "action", title: "Buton", content: "<button id='btn-${this.iD}' onclick='" + "alert(\"${this.firstName}\")" + "'>Click Me!</button>" },
+        ];
+        var options = {
+            columns: dableColumns,
+            initCallback: callbackAfterLoaded,
+            renderCallback: callbackAfterRendered,
+            recordPerPage: 5
+        }
+        var dableJs = new DableJS("root", "/Home/DableApi", options)
+        dableJs.init()
+    });
+    function callbackAfterLoaded() {
+        console.log("dable loaded")
+    }
+    function callbackAfterRendered() {
+        console.log("dable rendered")
+    }
+</script>

@@ -1,0 +1,61 @@
+﻿.dable {
+    font-family: "Open Sans", sans-serif;
+}
+
+.dable-table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+    .dable-table > thead > tr {
+        background: #f8f8f8;
+        border: 1px solid #ccc;
+        padding: .35em;
+    }
+
+        .dable-table > thead > tr > td {
+            padding: .625em;
+            text-align: left;
+            font-size: .85em;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+
+    .dable-table > tbody > tr {
+        border: 1px solid #ccc;
+        padding: .35em;
+    }
+
+        .dable-table > tbody > tr > td {
+            padding: .625em;
+            text-align: left;
+        }
+
+.dable-page-number {
+    width: 25px;
+    border: 1px solid #ccc;
+    text-align: center;
+    margin: 2px;
+    padding: 2px;
+}
+
+.dable-page-selected {
+    width: 25px;
+    border: 1px solid black;
+    text-align: center;
+    margin: 2px;
+    padding: 2px;
+}
+
+.dable-header-div {
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+.dable-footer-div {
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
