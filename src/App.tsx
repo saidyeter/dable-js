@@ -21,6 +21,8 @@ function App() {
       name: "User Name",
       identifier: "username",
       sortable: true,
+      filterable: true,
+      valType: "string",
     },
     {
       name: "E-Mail",
@@ -57,7 +59,7 @@ function App() {
               <svg
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                strokeWidth="0"
                 viewBox="0 0 320 512"
                 height="14"
                 width="14"
