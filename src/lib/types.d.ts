@@ -1,5 +1,5 @@
 import React from "react";
-import { StringOperations, NumberOperations } from "./constants";
+import { StringOperations, NumberOperations } from "./table/constants";
 
 export type ColumnTypeNames = "string" | "number" | "operation";
 export type ColumnType = string | number;
@@ -30,26 +30,27 @@ export interface IFilterProps {
     val: ColumnType
     operation: OperationType
 }
+export interface IStyleClassNames {
+    wrapper?: string;
+    table?: string;
+    thead?: {
+        thead?: string;
+        tr?: string;
+        trTh?: string;
+        trThWrapper?: string
+        trThWrapperSortButton?: string
+        trThWrapperFilterButton?: string
+    }
+    tbody?: {
+        tbody?: string;
+        tr?: string;
+        trTd?: string;
+        trTdWrapper?: string
+        trTdWrapperSortButton?: string
+    }
+}
 export interface IDableStyleProps {
-    classNames?: {
-        wrapper?: string;
-        table?: string;
-        thead?: {
-            thead?: string;
-            tr?: string;
-            trTh?: string;
-            trThWrapper?: string
-            trThWrapperSortButton?: string
-            trThWrapperFilterButton?: string
-        }
-        tbody?: {
-            tbody?: string;
-            tr?: string;
-            trTd?: string;
-            trTdWrapper?: string
-            trTdWrapperSortButton?: string
-        }
-    },
+    classNames?: IStyleClassNames,
     sortButtons?: {
         asc: string | React.ReactElement
         desc: string | React.ReactElement
@@ -63,9 +64,9 @@ export interface IDableStyleProps {
 export interface IDableProps<T> {
     data: T[];
     columns?: IColumnProps[];
-    style?: IDableStyleProps
-    onFilter?: (filters: IFilterProps[]) => void
-    onSort?: (sortCol: ISortProps) => void
+    style?: IDableStyleProps;
+    onFilter?: (filters: IFilterProps[]) => void;
+    onSort?: (sortCol: ISortProps) => void;
 }
 
 // credit: https://stackoverflow.com/a/68526558/3516508
