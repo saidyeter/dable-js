@@ -1,7 +1,7 @@
 import { Dable } from "./lib/table";
 import Users from "./users.json";
 import "./App.css";
-import { IColumnProps } from "./lib/table/types";
+import { IColumnProps } from "./lib/types";
 
 function App() {
   const users: UserModel[] = Users;

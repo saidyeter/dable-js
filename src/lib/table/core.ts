@@ -1,4 +1,4 @@
-import { IColumnProps, IFilterProps } from "./types";
+import { IColumnProps, IFilterProps } from "../types";
 
 export function convertData<T>(columns: IColumnProps[], body: T[]): (string | number)[][] {
     return body.map((item) => {
